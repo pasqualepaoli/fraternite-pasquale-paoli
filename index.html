@@ -41,38 +41,32 @@
             background: white;
             border-radius: 8px;
         }
-        .section img {
-            width: 100%;
-            max-width: 400px;
-            display: block;
-            margin: 20px auto;
+        /* Modifications pour l'image à gauche du texte */
+        .paoli-image {
+            float: left; /* Fait flotter l'image à gauche */
+            margin-right: 20px; /* Ajoute un espace entre l'image et le texte */
+            width: 150px; /* Limite la taille de l'image */
+            height: auto;
             border-radius: 8px;
         }
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+        .section .content {
+            overflow: hidden; /* Permet au texte de ne pas déborder sous l'image */
+        }
+        .contact-info {
             background: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        input[type="text"], input[type="email"], textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
         }
-        button {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        button:hover {
-            background-color: #555;
+        .contact-info a:hover {
+            color: #575757;
         }
     </style>
 </head>
@@ -92,11 +86,12 @@
 
     <div class="section" id="paoli">
         <h2>Pasquale Paoli</h2>
-        <p>Pasquale Paoli était un homme d'État, un militaire et un leader emblématique de la Corse. Né en 1725, il a été un des fondateurs de la République de Corse, un patriote déterminé à défendre l'indépendance de sa patrie. Il est également reconnu pour sa vision progressiste et sa philosophie de la liberté et de l'égalité.</p>
-        <p>Son héritage est celui d'un défenseur des idéaux républicains et de l'honneur de la Corse. Il incarne des valeurs de fraternité, d'intégrité et de justice qui résonnent encore aujourd'hui au sein de notre loge maçonnique.</p>
-
-        <!-- Ajout de l'image correcte de Pasquale Paoli -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Pasquale_Paoli_by_W_Beckey.jpg" alt="Pasquale Paoli">
+        <div class="content">
+            <!-- Image placée à gauche -->
+            <img src="https://raw.githubusercontent.com/pasqualepaoli/fraternite-pasquale-paoli/main/images/paoli.jpg" alt="Pasquale Paoli" class="paoli-image">
+            <p>Pasquale Paoli était un homme d'État, un militaire et un leader emblématique de la Corse. Né en 1725, il a été un des fondateurs de la République de Corse, un patriote déterminé à défendre l'indépendance de sa patrie. Il est également reconnu pour sa vision progressiste et sa philosophie de la liberté et de l'égalité.</p>
+            <p>Son héritage est celui d'un défenseur des idéaux républicains et de l'honneur de la Corse. Il incarne des valeurs de fraternité, d'intégrité et de justice qui résonnent encore aujourd'hui au sein de notre loge maçonnique.</p>
+        </div>
     </div>
 
     <div class="section" id="loge">
@@ -112,27 +107,21 @@
     </div>
 
     <div class="section" id="contact">
-        <h2>Contactez-nous pour postuler</h2>
-        <p>Si vous souhaitez rejoindre notre loge, n'hésitez pas à nous contacter pour plus d'informations ou pour postuler. Nous serions heureux de discuter avec vous de votre parcours et de vos motivations.</p>
-
-        <!-- Formulaire de contact avec l'email mis à jour -->
-        <form class="contact-form" method="POST" action="mailto:fraternite.pasquale.paoli@protonmail.com">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit">Envoyer</button>
-        </form>
+        <h2>Contactez-nous</h2>
+        <div class="contact-info">
+            <p>Si vous souhaitez rejoindre notre loge ou obtenir plus d'informations, vous pouvez nous contacter par e-mail.</p>
+            <p><a id="emailLink" href="#">E-mail: fraternite.pasquale.paoli@protonmail.com</a></p>
+        </div>
     </div>
 
     <footer>
         <p style="text-align: center; padding: 20px; background-color: #333; color: white;">Fraternité Pasquale Paoli &copy; 2025</p>
     </footer>
+
+    <script>
+        // Obfuscation de l'email avec JavaScript
+        document.getElementById('emailLink').setAttribute('href', 'mailto:' + 'fraternite.pasquale.paoli' + '@' + 'protonmail.com');
+    </script>
 
 </body>
 </html>
