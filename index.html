@@ -32,6 +32,34 @@
             text-decoration: none;
             text-align: center;
         }
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+        font-size: 20px; /* Texte encore plus grand sur mobile */
+    }
+    }
+
+    /* Amélioration des sections et boutons */
+    .section {
+    padding: 25px; /* Plus de padding pour un meilleur toucher mobile */
+        font-size: 18px; /* Texte plus lisible */
+    }
+
+    .compteur-container {
+        font-size: 16px; /* Texte du compteur plus grand */
+        padding: 12px; /* Plus d'espace autour */
+    }
+
+        
         nav a:hover {
             background-color: #575757;
         }
